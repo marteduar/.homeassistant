@@ -73,6 +73,8 @@ switch:
       11: Salaup
       12: Saladown
 
+#ios:
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
