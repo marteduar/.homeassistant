@@ -70,11 +70,35 @@ cloud:
 switch:
   - platform: rpi_gpio
     ports:
-      11: Salaup
-      12: Saladown
+      #verde
+      16: Salaup_v
+      
+      #rojo
+      19: Saladown_r
+    invert_logic: true
+
+binary_sensor:
+  platform: rpi_gpio
+  ports:
+    27: pibutton
+  value_high: "On"
+  value_low: "Off"
+  #invert_logic: true
+
 
 #ios:
 
+automation:
+  alias: 'Sala Down'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.pibutton
+    to: 'on'
+  action:  
+    alias: pi button
+    service: switch.toggle
+    entity_id: switch.Saladown_r
+  
 group: !include groups.yaml
-automation: !include automations.yaml
+#automation: !include automations.yaml
 script: !include scripts.yaml
