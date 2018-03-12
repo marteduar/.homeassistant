@@ -66,48 +66,53 @@ tts:
 # Cloud
 cloud:
 
-#cover command-line
-cover:
-  - platform: command_line
-    covers:
-      garage_door:
-        command_open: move_command up garage
-        command_close: move_command down garage
-        command_stop: move_command stop garage
-
 #GPIO
-switch:
-  - platform: rpi_gpio
-    ports:
-      #verde
-      16: Salaup_v
-      
-      #rojo
-      19: Saladown_r
-    invert_logic: true
+#switch:
+#  - platform: rpi_gpio
+#    ports:
+#      #verde
+#      16: Salaup_v
+#      
+#      #rojo
+#      19: Saladown_r
+#    invert_logic: true
 
-binary_sensor:
-  platform: rpi_gpio
-  ports:
-    27: pibutton
-  value_high: "On"
-  value_low: "Off"
-  #invert_logic: true
+#binary_sensor:
+#  platform: rpi_gpio
+#  ports:
+#    27: pibutton
+#  value_high: "On"
+#  value_low: "Off"
+#  #invert_logic: true
+
+cover: 
+  - platform: rpi_gpio
+    relay_time: 3
+    invert_relay: False
+    state_pull_mode: 'UP'
+    invert_state: True
+    covers:
+      - relay_pin: 16
+        state_pin: 27
+        name: 'Persiana Sala Up'
+      - relay_pin: 19
+        state_pin: 22
+        name: 'Persiana Sala Down'
 
 #ios:
 
-automation:
-  alias: 'Sala Down'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.pibutton
-    to: 'on'
-  action:  
-    - service: switch.toggle
-      entity_id: switch.Saladown_r
-    - delay: 2
-    - service: switch.toggle
-      entity_id: switch.Saladown_r
+#automation:
+#  alias: 'Sala Down'
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.pibutton
+#    to: 'on'
+#  action:  
+#    - service: switch.toggle
+#      entity_id: switch.Saladown_r
+#    - delay: 2
+#    - service: switch.toggle
+#      entity_id: switch.Saladown_r
   
 group: !include groups.yaml
 #automation: !include automations.yaml
