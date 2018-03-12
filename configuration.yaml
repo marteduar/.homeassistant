@@ -66,8 +66,7 @@ tts:
 # Cloud
 cloud:
 
-#GPIO
-
+#cover command-line
 cover:
   - platform: command_line
     covers:
@@ -76,6 +75,7 @@ cover:
         command_close: move_command down garage
         command_stop: move_command stop garage
 
+#GPIO
 switch:
   - platform: rpi_gpio
     ports:
