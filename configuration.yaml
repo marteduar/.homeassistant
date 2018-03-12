@@ -67,6 +67,15 @@ tts:
 cloud:
 
 #GPIO
+
+cover:
+  - platform: command_line
+    covers:
+      garage_door:
+        command_open: move_command up garage
+        command_close: move_command down garage
+        command_stop: move_command stop garage
+
 switch:
   - platform: rpi_gpio
     ports:
@@ -85,7 +94,6 @@ binary_sensor:
   value_low: "Off"
   #invert_logic: true
 
-
 #ios:
 
 automation:
@@ -95,9 +103,11 @@ automation:
     entity_id: binary_sensor.pibutton
     to: 'on'
   action:  
-    alias: pi button
-    service: switch.toggle
-    entity_id: switch.Saladown_r
+    - service: switch.toggle
+      entity_id: switch.Saladown_r
+    - delay: 2
+    - service: switch.toggle
+      entity_id: switch.Saladown_r
   
 group: !include groups.yaml
 #automation: !include automations.yaml
