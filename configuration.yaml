@@ -57,7 +57,15 @@ sun:
 
 # Weather prediction
 sensor:
-  - platform: yr
+#  - platform: yr
+   - platform: speedtest
+     minute:
+       - 0
+       - 30
+     monitored_conditions:
+       - ping
+       - download
+       - upload
 
 # Text to speech
 tts:
@@ -99,6 +107,7 @@ cover:
         state_pin: 22
         name: 'Persiana Sala Down'
 
+shopping_list:
 #ios:
 
 #automation:
