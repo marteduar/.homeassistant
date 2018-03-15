@@ -67,15 +67,15 @@ tts:
 cloud:
 
 #GPIO
-#switch:
-#  - platform: rpi_gpio
-#    ports:
-#      #verde
-#      16: Salaup_v
-#      
-#      #rojo
-#      19: Saladown_r
-#    invert_logic: true
+switch:
+  - platform: rpi_gpio
+    ports:
+      #verde
+      04: Salaup_v
+      
+      #rojo
+      19: Saladown_r
+    invert_logic: true
 
 #binary_sensor:
 #  platform: rpi_gpio
