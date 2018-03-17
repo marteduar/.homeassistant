@@ -1,6 +1,6 @@
 homeassistant:
   # Name of the location where Home Assistant is running
-  name: Casa Edu
+  name: Casa Edu y Bea
   # Location required to calculate the time the sun rises and sets
   latitude: 41.3984
   longitude: 2.1741
@@ -14,7 +14,7 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+#introduction:
 
 # Enables the frontend
 frontend:
@@ -55,17 +55,24 @@ map:
 # Track the sun
 sun:
 
-# Weather prediction
 sensor:
-#  - platform: yr
-   - platform: speedtest
-     minute:
-       - 0
-       - 30
-     monitored_conditions:
-       - ping
-       - download
-       - upload
+# Weather
+  - platform: yr
+# WiFi Speed Test
+  - platform: speedtest
+    minute:
+      - 30
+    monitored_conditions:
+      - ping
+      - download
+      - upload 
+# Estimote iBeacon
+  - platform: eddystone_temperature
+    beacons:
+      living_room:
+        namespace: "EDD1EBEAC04E5DEFA017"
+        instance: "c70a4a2ca76c"
+        name: "salaBeacon"
 
 # Text to speech
 tts:
@@ -80,9 +87,6 @@ switch:
     ports:
       #verde
       04: Salaup_v
-      
-      #rojo
-      19: Saladown_r
     invert_logic: true
 
 #binary_sensor:
@@ -95,19 +99,39 @@ switch:
 
 cover: 
   - platform: rpi_gpio
-    relay_time: 3
-    invert_relay: False
+    relay_time: 1
+    invert_relay: True
     state_pull_mode: 'UP'
-    invert_state: True
+    invert_state: False
     covers:
       - relay_pin: 16
-        state_pin: 27
-        name: 'Persiana Sala Up'
+        state_pin: 13
+        name: 'Persiana Sala DOWN'
       - relay_pin: 19
-        state_pin: 22
-        name: 'Persiana Sala Down'
+        state_pin: 13
+        name: 'Persiana Sala UP'
+      - relay_pin: 22
+        state_pin: 13
+        name: 'Persiana Cocina DOWN'
+      - relay_pin: 27
+        state_pin: 13
+        name: 'Persiana Cocina UP'  
 
 shopping_list:
+
+media_player:
+  - platform: cast
+    host: 192.168.1.132
+
+device_tracker:
+  - platform: nmap_tracker
+    hosts: 192.168.1.0/24
+    home_interval: 10
+    exclude: 
+     - 192.168.1.136
+     - 192.168.1.132    
+  - platform: bluetooth_tracker
+
 #ios:
 
 #automation:
