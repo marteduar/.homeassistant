@@ -1,0 +1,20 @@
+persiana_sala_down:
+  alias: Baja Persiana Sala
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_sala_down
+
+persiana_sala_up:
+  alias: Sube Persiana Sala
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_sala_up
+
+persiana_sala_down_mitad:
+  alias: Baja Persiana Sala Mitad
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_sala_down
+  - delay: 2
+  - service: cover.close_cover
+    entity_id: cover.persiana_sala_down

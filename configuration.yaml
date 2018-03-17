@@ -127,10 +127,10 @@ device_tracker:
   - platform: nmap_tracker
     hosts: 192.168.1.0/24
     home_interval: 10
-    exclude: 
-     - 192.168.1.136
-     - 192.168.1.132    
-  - platform: bluetooth_tracker
+
+#  - platform: bluetooth_tracker
+#    interval_seconds: 10
+#    consider_home: 180   
 
 #ios:
 
@@ -148,5 +148,5 @@ device_tracker:
 #      entity_id: switch.Saladown_r
   
 group: !include groups.yaml
-#automation: !include automations.yaml
+automation: !include automations.yaml
 script: !include scripts.yaml
