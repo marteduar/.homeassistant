@@ -46,3 +46,23 @@ persiana_sala_down_mitad:
   - delay: 2
   - service: cover.close_cover
     entity_id: cover.persiana_sala_down
+
+persiana_sala_stop:
+  alias: Sala Stop
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_sala_down
+
+persiana_cocina_stop:
+  alias: Cocina Stop
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_cocina_down
+
+persianas_stop:
+  alias: Persianas Stop
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_cocina_down
+  - service: cover.open_cover
+    entity_id: cover.persiana_sala_down
