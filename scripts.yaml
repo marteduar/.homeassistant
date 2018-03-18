@@ -23,7 +23,7 @@ persiana_kitchen_up:
     entity_id: cover.persiana_cocina_up
 
 persianas_down:
-  alias: Persianas Down
+  alias: Window Down
   sequence:
   - service: cover.open_cover
     entity_id: cover.persiana_cocina_down
@@ -31,7 +31,7 @@ persianas_down:
     entity_id: cover.persiana_sala_down
 
 persianas_up:
-  alias: Persianas Up
+  alias: Window Up
   sequence:
   - service: cover.open_cover
     entity_id: cover.persiana_cocina_up
@@ -53,14 +53,14 @@ persiana_sala_stop:
   - service: cover.open_cover
     entity_id: cover.persiana_sala_down
 
-persiana_cocina_stop:
-  alias: Cocina Stop
+persiana_kitchen_stop:
+  alias: Kitchen Stop
   sequence:
   - service: cover.open_cover
     entity_id: cover.persiana_cocina_down
 
 persianas_stop:
-  alias: Persianas Stop
+  alias: Window Stop
   sequence:
   - service: cover.open_cover
     entity_id: cover.persiana_cocina_down

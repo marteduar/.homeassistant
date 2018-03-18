@@ -85,11 +85,14 @@ cloud:
       include_entities:
         - script.persiana_sala_down
         - script.persiana_sala_up
-    #entity_config:
-      #script.persiana_sala_down
-        #display_categories: DOOR
-        #description: put window living room down
-
+        - script.persiana_kitchen_up
+        - script.persiana_kitchen_down
+        - script.persiana_kitchen_stop
+        - script.persiana_sala_stop
+        - script.persianas_down
+        - script.persianas_up
+        - script.persianas_stop
+        
 input_boolean:
   office_on: 
     name: I'm Home
