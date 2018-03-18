@@ -1,11 +1,11 @@
 persiana_sala_down:
-  alias: Baja Persiana Sala
+  alias: Sala Down
   sequence:
   - service: cover.open_cover
     entity_id: cover.persiana_sala_down
 
 persiana_sala_up:
-  alias: Sube Persiana Sala
+  alias: Sala Up
   sequence:
   - service: cover.open_cover
     entity_id: cover.persiana_sala_up

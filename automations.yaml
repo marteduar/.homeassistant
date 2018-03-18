@@ -1,26 +1,24 @@
-- alias: 'Persianas Up Edu@Home'
+- alias: Persianas Up Edu@Home
   trigger:
-    - platform: state
-      entity_id: device_tracker.kd65xd8505
-      to: 'home'
+  - platform: state
+    entity_id: device_tracker.kd65xd8505
+    to: home
   action:
-    - service: script.persiana_sala_up
-
-
-- alias: "Media player playing"
+  - service: script.persiana_sala_up
+- alias: Media player playing
   trigger:
-    - platform: state
-      entity_id: media_player.salon
-      # only fires when you start playing (from paused or stopped state)
-      to: 'playing'
-  #condition:
-  #  - condition: state
-  #    entity_id: light.master
-  #    # only fire if the overhead is on.  that way we don't turn on and dim a light that is already off!
-  #    state: 'on'
-  #  - condition: time
-  #    # again, only before it gets too late in the evening
-  #    before: '23:20:00'
+  - platform: state
+    entity_id: media_player.salon
+    to: playing
   action:
-      service: script.persiana_sala_down
-      # this is the scene that sets the lights dim
+    service: script.persiana_sala_down
+- action:
+  - service: script.persiana_sala_down
+  alias: Alexa Down
+  condition: []
+  id: '1521372340606'
+  trigger:
+  - entity_id: input_boolean.office_on
+    from: 'off'
+    platform: state
+    to: 'on'

@@ -80,6 +80,21 @@ tts:
 
 # Cloud
 cloud:
+  alexa:
+    filter:
+      include_entities:
+        - script.persiana_sala_down
+        - script.persiana_sala_up
+    #entity_config:
+      #script.persiana_sala_down
+        #display_categories: DOOR
+        #description: put window living room down
+
+input_boolean:
+  office_on: 
+    name: I'm Home
+    initial: off
+  
 
 #GPIO
 switch:
@@ -146,7 +161,7 @@ device_tracker:
 #    - delay: 2
 #    - service: switch.toggle
 #      entity_id: switch.Saladown_r
-  
+     
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
