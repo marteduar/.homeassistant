@@ -71,7 +71,7 @@ sensor:
     beacons:
       living_room:
         namespace: "EDD1EBEAC04E5DEFA017"
-        instance: "c70a4a2ca76c"
+        instance: "C70A4A2CA76C"
         name: "salaBeacon"
 
 # Text to speech
@@ -107,14 +107,6 @@ switch:
       04: Salaup_v
     invert_logic: true
 
-#binary_sensor:
-#  platform: rpi_gpio
-#  ports:
-#    27: pibutton
-#  value_high: "On"
-#  value_low: "Off"
-#  #invert_logic: true
-
 cover: 
   - platform: rpi_gpio
     relay_time: 1
@@ -142,29 +134,20 @@ media_player:
     host: 192.168.1.132
 
 device_tracker:
-  - platform: nmap_tracker
-    hosts: 192.168.1.0/24
-    home_interval: 10
-
-#  - platform: bluetooth_tracker
+#  - platform: nmap_tracker
+#    hosts: 192.168.1.0/24
+#    #home_interval: 10
 #    interval_seconds: 10
-#    consider_home: 180   
+#    consider_home: 180
+#    track_new_devices: yes
+
+  - platform: bluetooth_tracker
+    interval_seconds: 10
+    consider_home: 180
+    track_new_devices: yes
 
 #ios:
 
-#automation:
-#  alias: 'Sala Down'
-#  trigger:
-#    platform: state
-#    entity_id: binary_sensor.pibutton
-#    to: 'on'
-#  action:  
-#    - service: switch.toggle
-#      entity_id: switch.Saladown_r
-#    - delay: 2
-#    - service: switch.toggle
-#      entity_id: switch.Saladown_r
-     
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml

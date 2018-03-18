@@ -1,0 +1,29 @@
+defalut_view:
+  view: yes
+  icon: mdi:home-assistant
+  entities:
+    - group.all_covers
+    - group.all_switches
+    - group.all_devices
+    - input_boolean.office_on
+    - sensor.speedtest_download
+    - sensor.speedtest_ping
+    - sensor.speedtest_upload
+    - sensor.yr_symbol
+    - sun.sun
+
+automations:
+  view: yes
+  icon: mdi:desktop-classic
+  name: Automations
+  view: yes
+  entities:
+    - group.all_automations
+
+scripts:
+  view: yes
+  icon: mdi:cube-send
+  name: Scripts
+  view: yes
+  entities:
+    - group.all_scripts

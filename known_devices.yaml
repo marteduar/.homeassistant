@@ -1,90 +1,9 @@
 
-'19216811':
+iphone_de_eduardo_f:
   hide_if_away: false
   icon:
-  mac: 88:5D:FB:C9:2F:C8
-  name: 192.168.1.1
-  picture:
-  track: true
-  vendor: zte corporation
-
-mycloudex2ultrahome:
-  hide_if_away: false
-  icon:
-  mac: 00:90:A9:EF:43:0B
-  name: mycloudex2ultra.home
-  picture:
-  track: true
-  vendor: unknown
-
-chromecasthome:
-  hide_if_away: false
-  icon:
-  mac: A4:77:33:C7:DA:E8
-  name: chromecast.home
-  picture:
-  track: true
-  vendor: unknown
-
-barltm5131home:
-  hide_if_away: false
-  icon:
-  mac: 8C:85:90:80:16:35
-  name: barltm5131.home
-  picture:
-  track: true
-  vendor: unknown
-
-iphonededuardofhome:
-  hide_if_away: false
-  icon:
-  mac: F0:98:9D:AB:D6:42
+  mac: BT_F0:98:9D:AB:D6:43
   name: iEdu
-  picture: local/Surfer-icon.png
-  track: true
-  vendor: Apple, Inc.
-
-androidab396bef8f2c2f98home:
-  hide_if_away: false
-  icon:
-  mac: BC:F5:B2:F5:D1:C9
-  name: android-ab396bef8f2c2f98.home
-  picture:
-  track: true
-  vendor: unknown
-
-ipaddeeduardofhome:
-  hide_if_away: false
-  icon:
-  mac: 34:12:98:49:A6:90
-  name: ipaddeeduardof.home
-  picture:
-  track: true
-  vendor: Apple, Inc.
-
-galaxys6home:
-  hide_if_away: false
-  icon:
-  mac: E8:50:8B:73:0E:85
-  name: galaxy-s6.home
-  picture:
-  track: true
-  vendor: SAMSUNG ELECTRO-MECHANICS(THAILAND)
-
-mbpdeeduardohome:
-  hide_if_away: false
-  icon:
-  mac: 6C:40:08:B4:83:4C
-  name: mbp-de-eduardo.home
-  picture:
-  track: true
-  vendor: Apple, Inc.
-
-'1921681134':
-  hide_if_away: false
-  icon:
-  mac: 68:A8:6D:06:07:AE
-  name: 192.168.1.134
-  picture:
+  picture: local/Surfer-icon.png 
   track: true
   vendor: Apple, Inc.
