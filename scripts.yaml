@@ -10,6 +10,34 @@ persiana_sala_up:
   - service: cover.open_cover
     entity_id: cover.persiana_sala_up
 
+persiana_kitchen_down:
+  alias: Kitchen Down
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_cocina_down
+
+persiana_kitchen_up:
+  alias: Kitchen Up
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_cocina_up
+
+persianas_down:
+  alias: Persianas Down
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_cocina_down
+  - service: cover.open_cover
+    entity_id: cover.persiana_sala_down
+
+persianas_up:
+  alias: Persianas Up
+  sequence:
+  - service: cover.open_cover
+    entity_id: cover.persiana_cocina_up
+  - service: cover.open_cover
+    entity_id: cover.persiana_sala_up
+
 persiana_sala_down_mitad:
   alias: Baja Persiana Sala Mitad
   sequence:
