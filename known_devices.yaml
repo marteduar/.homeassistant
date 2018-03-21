@@ -7,3 +7,21 @@ iphone_de_eduardo_f:
   picture: local/Surfer-icon.png 
   track: true
   vendor: Apple, Inc.
+
+kd65xd8505:
+  hide_if_away: false
+  icon:
+  mac: BT_94:53:30:C9:34:28
+  name: KD-65XD8505
+  picture:
+  track: true
+  vendor: Hon Hai Precision Ind. Co.,Ltd.
+
+andriis_macbook_pro:
+  hide_if_away: false
+  icon:
+  mac: BT_C4:B3:01:BE:F5:7C
+  name: Andrii’s MacBook Pro
+  picture:
+  track: true
+  vendor: unknown

@@ -16,7 +16,6 @@ automations:
   view: yes
   icon: mdi:desktop-classic
   name: Automations
-  view: yes
   entities:
     - group.all_automations
 
@@ -24,6 +23,6 @@ scripts:
   view: yes
   icon: mdi:cube-send
   name: Scripts
-  view: yes
   entities:
     - group.all_scripts
+
