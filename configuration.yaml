@@ -80,25 +80,19 @@ tts:
 
 # Cloud
 cloud:
-  alexa:
-    filter:
-      include_entities:
-        - script.persiana_sala_down
-        - script.persiana_sala_up
-        - script.persiana_kitchen_up
-        - script.persiana_kitchen_down
-        - script.persiana_kitchen_stop
-        - script.persiana_sala_stop
-        - script.persianas_down
-        - script.persianas_up
-        - script.persianas_stop
+#  alexa:
+#    filter:
+#      include_entities:
+#        - script.persiana_sala_down
+#        - script.persiana_sala_up
+#        - script.persiana_kitchen_up
+#        - script.persiana_kitchen_down
+#        - script.persiana_kitchen_stop
+#        - script.persiana_sala_stop
+#        - script.persianas_down
+#        - script.persianas_up
+#        - script.persianas_stop
         
-input_boolean:
-  office_on: 
-    name: I'm Home
-    initial: off
-  
-
 #GPIO
 switch:
   - platform: rpi_gpio
@@ -147,6 +141,16 @@ device_tracker:
     track_new_devices: yes
 
 #ios:
+
+scene:
+  - name: Sala
+    entities:
+      switch.salaup_v: on
+
+tradfri:
+  host: 192.168.1.137
+
+python_script:
 
 group: !include groups.yaml
 automation: !include automations.yaml

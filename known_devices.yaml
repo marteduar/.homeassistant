@@ -25,3 +25,30 @@ andriis_macbook_pro:
   picture:
   track: true
   vendor: unknown
+
+alel21:
+  hide_if_away: false
+  icon:
+  mac: BT_7C:11:CB:D0:C9:67
+  name: ALE-L21
+  picture:
+  track: true
+  vendor: HUAWEI TECHNOLOGIES CO.,LTD
+
+echo_dot7b1:
+  hide_if_away: false
+  icon:
+  mac: BT_00:71:47:93:28:3C
+  name: Echo Dot-7B1
+  picture:
+  track: true
+  vendor: unknown
+
+iness_macbook_pro:
+  hide_if_away: false
+  icon:
+  mac: BT_AC:BC:32:C5:6B:FA
+  name: ines’s MacBook Pro
+  picture:
+  track: true
+  vendor: unknown

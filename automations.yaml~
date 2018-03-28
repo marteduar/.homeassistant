@@ -1,0 +1,24 @@
+- alias: Persianas Up Edu@Home
+  trigger:
+  - platform: state
+    entity_id: device_tracker.kd65xd8505
+    to: home
+  action:
+  - service: script.persiana_sala_up
+- alias: Media player playing
+  trigger:
+  - platform: state
+    entity_id: media_player.salon
+    to: playing
+  action:
+    service: script.persiana_sala_down
+- action:
+  - service: script.persiana_sala_down
+  alias: Alexa Down
+  condition: []
+  id: '1521372340606'
+  trigger:
+  - entity_id: input_boolean.office_on
+    from: 'off'
+    platform: state
+    to: 'on'
